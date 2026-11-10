@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Книга рецептов</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <h1>📖 Книга рецептов</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Поиск по названию или ингредиенту…">
+  </div>
+</header>
+
+<main class="container">
+  <div id="categories" class="categories"></div>
+  <div id="content" class="content"></div>
+</main>
+
+<!-- Модальное окно рецепта -->
+<div id="recipeModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close-btn" onclick="closeRecipe()">✕</button>
+    <div id="recipeBody"></div>
+  </div>
+</div>
+
+<!-- Модальное окно добавления рецепта -->
+<div id="addModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close-btn" onclick="closeAdd()">✕</button>
+    <h2>✍️ Добавить свой рецепт</h2>
+    <form id="addForm">
+      <label>Название блюда <input type="text" id="rName" required></label>
+      <label>Время приготовления <input type="text" id="rTime" placeholder="например, 30 минут" required></label>
+      <label>Ингредиенты (через запятую) <textarea id="rIng" rows="3" required></textarea></label>
+      <label>Шаги приготовления (через точку) <textarea id="rSteps" rows="4" required></textarea></label>
+      <button type="submit" class="btn-primary">Добавить рецепт</button>
+    </form>
+  </div>
+</div>
+
+<button class="fab" onclick="openAdd()" title="Добавить свой рецепт">+</button>
+
+<footer class="footer">Приятного аппетита! 🍽️</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
